@@ -1,5 +1,15 @@
-runtime: python37
-env_variables:
-    CLOUD_STORAGE_BUCKET: data_docs_demo
+#runtime: python37
+#env_variables:
+#    CLOUD_STORAGE_BUCKET: data_docs_demo
+#
+#entrypoint: gunicorn -b :$PORT main:app
 
+runtime: python
+env: flex
 entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+  python_version: 3
+
+env_variables:
+    CLOUD_STORAGE_BUCKET: test_bucket_14141

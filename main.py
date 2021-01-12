@@ -5,7 +5,7 @@ import logging
 
 app = Flask(__name__)
 # Configure this environment variable via app.yaml
-CLOUD_STORAGE_BUCKET = "data_docs_demo"
+CLOUD_STORAGE_BUCKET = "test_bucket_14141"
 @app.route('/', defaults={'path': 'data_docs/index.html'})
 @app.route('/<path:path>')
 def index(path):
@@ -35,7 +35,3 @@ def server_error(e):
 
 if __name__ == "__main__":
     app.run(debug=True, host='localhost', port=int(os.environ.get('PORT', 8080)))
-
-# - gcloud builds submit --tag gcr.io/greatexpectationsdemo/gedemo
-# - gcloud run deploy --image gcr.io/greatexpectationdemo/gedemo --platform managed
-# - gcloud run deploy <service-name> --image gcr.io/greatexpectationdemo/gedemo --platform managed
