@@ -1,0 +1,5 @@
+runtime: python37
+env_variables:
+    CLOUD_STORAGE_BUCKET: data_docs_demo
+
+entrypoint: gunicorn -b :$PORT main:app
